@@ -26,7 +26,7 @@ pipeline {
     }
 }
 
-stage('Docker Push') {
+/*stage('Docker Push') {
     steps {
         withCredentials([
             usernamePassword(
@@ -37,6 +37,14 @@ stage('Docker Push') {
         ]) {
             bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
             bat 'docker push mihitha12/student-lms:latest'
+        }
+    }
+}*/
+
+stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            bat 'mvn sonar:sonar -Dsonar.projectKey=student-lms'
         }
     }
 }
