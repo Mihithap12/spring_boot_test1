@@ -3,9 +3,15 @@ pipeline {
 
     stages {
 
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Jenkins successfully connected to my GitHub project!'
+                echo 'Code checked out from GitHub'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean package -DskipTests'
             }
         }
 
