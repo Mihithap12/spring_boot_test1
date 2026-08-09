@@ -44,7 +44,7 @@ pipeline {
 stage('SonarQube Analysis') {
     steps {
         withSonarQubeEnv('SonarQube') {
-            bat 'mvn sonar:sonar -Dsonar.projectKey=student-lms'
+            bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=student-lms'
         }
     }
 }
