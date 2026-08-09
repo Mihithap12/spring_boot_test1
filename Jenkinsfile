@@ -20,11 +20,11 @@ pipeline {
         }
 
 
-        stage('Docker') {
-            steps {
-                bat 'docker --version'
-            }
-        }
+        stage('Docker Build') {
+    steps {
+        bat 'docker build -t student-lms:latest .'
+    }
+}
 
     }
 }
