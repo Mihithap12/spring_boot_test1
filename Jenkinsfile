@@ -22,7 +22,7 @@ pipeline {
 
         stage('Docker Build') {
     steps {
-        bat 'docker build -t student-lms:latest .'
+        bat 'docker build -t mihitha12/student-lms:latest .'
     }
 }
 
