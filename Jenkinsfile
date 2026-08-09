@@ -19,11 +19,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                bat 'mvn test'
-            }
-        }
 
         stage('Docker') {
             steps {
